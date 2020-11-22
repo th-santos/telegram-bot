@@ -8,8 +8,8 @@
     $id = $update["message"]["from"]["id"];
     $username = $update["message"]["from"]["username"];
     $firstname = $update["message"]["from"]["first_name"];
-    $message_id = $upadte["message"]["message_id"];
-    $bot_name = "" //your bot name
+    $message_id = $update["message"]["message_id"];
+    $bot_name = ""; //your bot name
  /// for broadcasting in Channel
 $channel_id = "-1001351780832"; 
 
@@ -361,7 +361,7 @@ else {
 
 
      ///Send Message (Global)
-    function send_message($chat_id, $message){
+    function send_message($chat_id, $message, $message_id){
         $apiToken = " ";
         $text = urlencode($message);
         file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?chat_id=$chat_id&reply_to_message_id=$message_id&text=$text");
